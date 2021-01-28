@@ -67,5 +67,8 @@
   },
   "files": [
     "dist"
+  ],
+  "precommit": [
+    "build"
   ]
 }
