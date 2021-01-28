@@ -34,7 +34,8 @@ export default class ReactMic extends Component {
       mimeType,
       bufferSize,
       recorderParams,
-      sampleRate
+      sampleRate,
+      audioChannels
     } = this.props
     const canvas = this.visualizer.current
     const canvasCtx = canvas.getContext('2d')
@@ -43,6 +44,7 @@ export default class ReactMic extends Component {
       mimeType: mimeType,
       bufferSize: bufferSize,
       sampleRate: sampleRate,
+      audioChannels: audioChannels,
       recorderParams: recorderParams
     }
 
@@ -127,6 +129,7 @@ ReactMic.propTypes = {
   onData: func,
   bufferSize: oneOf([0, 256, 512, 1024, 2048, 4096, 8192, 16384]),
   sampleRate: number,
+  audioChannels: number,
   recorderParams: object
 }
 
@@ -138,6 +141,7 @@ ReactMic.defaultProps = {
   mimeType: 'audio/wav',
   bufferSize: 2048,
   sampleRate: 44100,
+  audioChannels: 2,
   record: false,
   width: 640,
   height: 100,
